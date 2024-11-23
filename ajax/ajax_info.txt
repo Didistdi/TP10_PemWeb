@@ -1,0 +1,21 @@
+function submitForm() {
+    const nameInput = document.getElementById("name");
+    const errorMessage = document.getElementById("errorMessage");
+    const greetingDiv = document.getElementById("greeting");
+
+    errorMessage.textContent = "";
+    greetingDiv.textContent = "";
+
+    if (nameInput.value.trim() === "") {
+        errorMessage.textContent = "Nama tidak boleh kosong.";
+        nameInput.focus();
+        return;
+    }
+
+    setTimeout(function() {
+        greetingDiv.innerHTML = `
+        <br>
+            Halo, ${nameInput.value} Selamat datang di AJAX
+        `;
+    });
+}   
